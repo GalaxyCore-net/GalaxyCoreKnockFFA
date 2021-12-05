@@ -9,11 +9,11 @@ import java.util.logging.Logger;
 public final class KnockFFA extends JavaPlugin {
 
     @Getter
-    private static Logger logger;
+    private static Logger pluginLogger;
 
     @Override
     public void onEnable() {
-        logger = Bukkit.getLogger();
+        pluginLogger = Bukkit.getLogger();
     }
 
     @Override
