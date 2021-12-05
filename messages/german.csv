@@ -1,0 +1,132 @@
+onehit.0.arrow,§cPfeil
+onehit.0.booster,§cBooster
+onehit.0.bow,§cBogen
+onehit.0.killed,§l§c✖ §r§4Gestorben
+onehit.0.killed.sub,%rank_prefix%%player% §8| §c-1 Coin
+onehit.0.killedself,%rank_prefix%%player% §9hat sich selber mit dem Bogen abgeschossen. Das ist belastend.
+onehit.0.nomoney,§cDu hast nicht genügend Geld
+onehit.0.score.coins,Coins
+onehit.0.score.coins.color,§7
+onehit.0.score.deaths,Tode
+onehit.0.score.deaths.color,§7
+onehit.0.score.kd,KD
+onehit.0.score.kd.color,§7
+onehit.0.score.kills,Kills
+onehit.0.score.kills.color,§7
+onehit.0.score.sub,Teamspeak-Server
+onehit.0.score.sub.value,§7Galaxycore.net
+onehit.0.settings,§eEinstellungen
+onehit.0.settings.alreadybought,§eBereits gekauft
+onehit.0.settings.booster.bought,§eDu hast den Booster für 5 min erhalten!
+onehit.0.settings.booster.lore,Schleudert dich für 5 min nach vorne
+onehit.0.settings.booster.price,§7150 Coins
+onehit.0.settings.buy,§eKaufen:
+onehit.0.settings.coins,Coins
+onehit.0.settings.messageset.0.name,Standart-Nachrichten
+onehit.0.settings.messageset.1.name,Spezial-Nachrichten 1
+onehit.0.settings.messageset.2.name,Spezial-Nachrichten 2
+onehit.0.settings.messageset.3.name,Spezial-Team-Nachrichten
+onehit.0.settings.setchosen,§eSet Ausgewählt
+onehit.0.streak,§c%player% §fhat nun einen Streak von %d!
+onehit.0.sword,§cSchwert
+onehit.0.wonfight,§l§a✓ §r§4+5 Coins
+onehit.0.wonfight.sub,%rank_prefix%%player%
+onehit.1.arrow,§cPfeil
+onehit.1.booster,§cBooster
+onehit.1.bow,§cBogen
+onehit.1.killed,§l§c✖ §r§8%rank_prefix%%player% | §c-1 Coin
+onehit.1.killed.sub,§4hat deine Ehre entwendet!
+onehit.1.killedself,%rank_prefix%%player% §5hat sich selber mit dem Bogen abgeschossen. Das ist belastend.
+onehit.1.nomoney,§cDu hast nicht genügend Geld
+onehit.1.score.coins,Coins
+onehit.1.score.coins.color,§7
+onehit.1.score.deaths,Tode
+onehit.1.score.deaths.color,§7
+onehit.1.score.kd,KD
+onehit.1.score.kd.color,§7
+onehit.1.score.kills,Kills
+onehit.1.score.kills.color,§7
+onehit.1.score.sub,Teamspeak-Server
+onehit.1.score.sub.value,§7Galaxycore.net
+onehit.1.settings,§eEinstellungen
+onehit.1.settings.alreadybought,§eBereits gekauft
+onehit.1.settings.booster.bought,§eDu hast den Booster für 5 min erhalten!
+onehit.1.settings.booster.lore,Schleudert dich für 5 min nach vorne
+onehit.1.settings.booster.price,§7150 Coins
+onehit.1.settings.buy,§eKaufen:
+onehit.1.settings.coins,Coins
+onehit.1.settings.messageset.0.name,Standart-Nachrichten
+onehit.1.settings.messageset.1.name,Spezial-Nachrichten 1
+onehit.1.settings.messageset.2.name,Spezial-Nachrichten 2
+onehit.1.settings.messageset.3.name,Spezial-Team-Nachrichten
+onehit.1.settings.setchosen,§eSet Ausgewählt
+onehit.1.streak,§c%player% §2hat %d mal eure Ehre entwendet!
+onehit.1.sword,§cSchwert
+onehit.1.wonfight,§l§a✓ §r§4+5 Coins
+onehit.1.wonfight.sub,§cDu hast %rank_prefix%%player% §c's Ehre entwendet und nach Afrika gespendet!
+onehit.2.arrow,§cPfeil
+onehit.2.booster,§cBooster
+onehit.2.bow,§cBogen
+onehit.2.killed,§l§c✖ §r§3%rank_prefix%%player% | §c-1 Coin
+onehit.2.killed.sub,§6hat dir 5 € geklaut und kauft sich damit einen Döner.
+onehit.2.killedself,%rank_prefix%%player% §6hat sich selber mit dem Bogen abgeschossen. Das ist belastend.
+onehit.2.nomoney,§cDafür bist du zu Arm!
+onehit.2.score.coins,Coins
+onehit.2.score.coins.color,§7
+onehit.2.score.deaths,Tode
+onehit.2.score.deaths.color,§7
+onehit.2.score.kd,KD
+onehit.2.score.kd.color,§7
+onehit.2.score.kills,Kills
+onehit.2.score.kills.color,§7
+onehit.2.score.sub,Teamspeak-Server
+onehit.2.score.sub.value,§7Galaxycore.net
+onehit.2.settings,§eEinstellungen
+onehit.2.settings.alreadybought,§eBereits gekauft
+onehit.2.settings.booster.bought,§eDu hast den Booster für 5 min erhalten!
+onehit.2.settings.booster.lore,Schleudert dich für 5 min nach vorne
+onehit.2.settings.booster.price,§7150 Coins
+onehit.2.settings.buy,§eKaufen:
+onehit.2.settings.coins,Coins
+onehit.2.settings.messageset.0.name,Standart-Nachrichten
+onehit.2.settings.messageset.1.name,Spezial-Nachrichten 1
+onehit.2.settings.messageset.2.name,Spezial-Nachrichten 2
+onehit.2.settings.messageset.3.name,Spezial-Team-Nachrichten
+onehit.2.settings.setchosen,§eSet Ausgewählt
+onehit.2.streak,§3%player% §5hat euch %d! mal 5€ geklaut.
+onehit.2.sword,§cSchwert
+onehit.2.wonfight,§l§a✓ §r§4+5 Coins
+onehit.2.wonfight.sub,§aDu hast %rank_prefix%%player% §a5 € entwendet und kannst dir damit einen Döner kaufen!
+onehit.3.arrow,§cDildo
+onehit.3.booster,§cBooster
+onehit.3.bow,§cButtplug
+onehit.3.killed,%rank_prefix%%player% §8| §c-1 Coin
+onehit.3.killed.sub,§l§c✖ §chat deine Mutter gefickt.
+onehit.3.killedself,%rank_prefix%%player% §9der Hurensohn hat sich selber mit dem Bogen getötet Idiot.! b-baka
+onehit.3.nomoney,§cDafür bist du zu Arm du Hurensohn!
+onehit.3.score.coins,Coins
+onehit.3.score.coins.color,§7
+onehit.3.score.deaths,Tode
+onehit.3.score.deaths.color,§7
+onehit.3.score.kd,KD
+onehit.3.score.kd.color,§7
+onehit.3.score.kills,Kills
+onehit.3.score.kills.color,§7
+onehit.3.score.sub,Tim´s Exfreundin ->
+onehit.3.score.sub.value,§7PornHub.com
+onehit.3.settings,§eEinstellungen
+onehit.3.settings.alreadybought,§eBereits gekauft
+onehit.3.settings.booster.bought,§eDu hast den Booster für 5 min erhalten!
+onehit.3.settings.booster.lore,Schleudert dich für 5 min nach vorne
+onehit.3.settings.booster.price,§7150 Coins
+onehit.3.settings.buy,§eKaufen:
+onehit.3.settings.coins,Coins
+onehit.3.settings.messageset.0.name,Standart-Nachrichten
+onehit.3.settings.messageset.1.name,Spezial-Nachrichten 1
+onehit.3.settings.messageset.2.name,Spezial-Nachrichten 2
+onehit.3.settings.messageset.3.name,Spezial-Team-Nachrichten
+onehit.3.settings.setchosen,§eSet Ausgewählt
+onehit.3.streak,§c%player% §fhat deine Mutter %d mal gefickt! Du Hurensohn
+onehit.3.sword,§cAnalpennetrier
+onehit.3.wonfight,§l§a✓ §r§4+5 Coins
+onehit.3.wonfight.sub,%rank_prefix%%player%

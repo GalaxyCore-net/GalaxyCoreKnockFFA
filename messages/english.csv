@@ -1,0 +1,136 @@
+onehit.0.arrow,§cArrow
+onehit.0.booster,§cBooster
+onehit.0.bow,§cBow
+onehit.0.killed,§l§c✖ §r§4You Died
+onehit.0.killed.sub,%rank_prefix%%player% §8| §c-1 Coin
+onehit.0.killedself,%rank_prefix%%player% §9tried to kill himself with a bow. That's hilarious!
+onehit.0.nomoney,§cYou don't have enough money
+onehit.0.score.coins,Coins
+onehit.0.score.coins.color,§7
+onehit.0.score.deaths,Deaths
+onehit.0.score.deaths.color,§7
+onehit.0.score.kd,KD
+onehit.0.score.kd.color,§7
+onehit.0.score.kills,Kills
+onehit.0.score.kills.color,§7
+onehit.0.score.sub,Teamspeak-Server
+onehit.0.score.sub.value,§7Galaxycore.net
+onehit.0.settings,§eSettings
+onehit.0.settings.alreadybought,§eAlready bought
+onehit.0.settings.booster.bought,§eYou bought the Booster for five minutes!
+onehit.0.settings.booster.lore,"Throws yourself forward for 5 min
+§7(150 Coins)"
+onehit.0.settings.booster.price,§7150 Coins
+onehit.0.settings.buy,§eBuy:
+onehit.0.settings.coins,Coins
+onehit.0.settings.messageset.0.name,Normal Messages
+onehit.0.settings.messageset.1.name,Special Messages 1
+onehit.0.settings.messageset.2.name,Special Messages 2
+onehit.0.settings.messageset.3.name,Special Team Messages
+onehit.0.settings.setchosen,§eSet Chosen
+onehit.0.streak,§c%player% §fnow has a streak of %d
+onehit.0.sword,§cSword
+onehit.0.wonfight,§l§a✓ §r§4+5 Coins
+onehit.0.wonfight.sub,%rank_prefix%%player%
+onehit.1.arrow,§cArrow
+onehit.1.booster,§cBooster
+onehit.1.bow,§cBow
+onehit.1.killed,§l§c✖ §r§8%rank_prefix%%player% | §c-1 Coin
+onehit.1.killed.sub,§4has stolen your honour!
+onehit.1.killedself,%rank_prefix%%player% §5tried to kill himself with a bow. That's hilarious!
+onehit.1.nomoney,§cYou don't have enough money
+onehit.1.score.coins,Coins
+onehit.1.score.coins.color,§7
+onehit.1.score.deaths,Deaths
+onehit.1.score.deaths.color,§7
+onehit.1.score.kd,KD
+onehit.1.score.kd.color,§7
+onehit.1.score.kills,Kills
+onehit.1.score.kills.color,§7
+onehit.1.score.sub,Teamspeak-Server
+onehit.1.score.sub.value,§7Galaxycore.net
+onehit.1.settings,§eSettings
+onehit.1.settings.alreadybought,§eAlready bought
+onehit.1.settings.booster.bought,§eYou bought the Booster for five minutes!
+onehit.1.settings.booster.lore,"Throws yourself forward for 5 min
+§7(150 Coins)"
+onehit.1.settings.booster.price,§7150 Coins
+onehit.1.settings.buy,§eBuy:
+onehit.1.settings.coins,Coins
+onehit.1.settings.messageset.0.name,Normal Messages
+onehit.1.settings.messageset.1.name,Special Messages 1
+onehit.1.settings.messageset.2.name,Special Messages 2
+onehit.1.settings.messageset.3.name,Special Team Messages
+onehit.1.settings.setchosen,§eSet Chosen
+onehit.1.streak,§c%player% §2has %d times stolen your honour!
+onehit.1.sword,§cSword
+onehit.1.wonfight,§l§a✓ §r§4+5 Coins
+onehit.1.wonfight.sub,You stole %rank_prefix%%player% §c's honour and donated it to Africa!
+onehit.2.arrow,§cArrow
+onehit.2.booster,§cBooster
+onehit.2.bow,§cBow
+onehit.2.killed,§l§c✖ §r§3%rank_prefix%%player% | §c-1 Coin
+onehit.2.killed.sub,§6has stolen €5 from you and buys a kebab with it.
+onehit.2.killedself,%rank_prefix%%player% §6tried to kill himself with a bow. That's hilarious!
+onehit.2.nomoney,§cYou're too poor for that!
+onehit.2.score.coins,Coins
+onehit.2.score.coins.color,§7
+onehit.2.score.deaths,Deaths
+onehit.2.score.deaths.color,§7
+onehit.2.score.kd,KD
+onehit.2.score.kd.color,§7
+onehit.2.score.kills,Kills
+onehit.2.score.kills.color,§7
+onehit.2.score.sub,Teamspeak-Server
+onehit.2.score.sub.value,§7Galaxycore.net
+onehit.2.settings,§eSettings
+onehit.2.settings.alreadybought,§eAlready bought
+onehit.2.settings.booster.bought,§eYou bought the Booster for five minutes!
+onehit.2.settings.booster.lore,"Throws yourself forward for 5 min
+§7(150 Coins)"
+onehit.2.settings.booster.price,§7150 Coins
+onehit.2.settings.buy,§eBuy:
+onehit.2.settings.coins,Coins
+onehit.2.settings.messageset.0.name,Normal Messages
+onehit.2.settings.messageset.1.name,Special Messages 1
+onehit.2.settings.messageset.2.name,Special Messages 2
+onehit.2.settings.messageset.3.name,Special Team Messages
+onehit.2.settings.setchosen,§eSet Chosen
+onehit.2.streak,§3%player% §5stole %d! times 5€ from you.
+onehit.2.sword,§cSword
+onehit.2.wonfight,§l§a✓ §r§4+5 Coins
+onehit.2.wonfight.sub,§aYou have stolen €5 from %rank_prefix%%player% §aand can buy a kebab with it!
+onehit.3.arrow,§cdildo
+onehit.3.booster,§cBooster
+onehit.3.bow,§cButtplug
+onehit.3.killed,%rank_prefix%%player% §8| §c-1 Coin
+onehit.3.killed.sub,§l§c✖ §cfucked your mother.
+onehit.3.killedself,%rank_prefix%%player% §9the son of a bitch killed himself with the bow idiot.! b-baka
+onehit.3.nomoney,"§cYou're too poor for that, you son of a bitch!"
+onehit.3.score.coins,Coins
+onehit.3.score.coins.color,§7
+onehit.3.score.deaths,Deaths
+onehit.3.score.deaths.color,§7
+onehit.3.score.kd,KD
+onehit.3.score.kd.color,§7
+onehit.3.score.kills,Kills
+onehit.3.score.kills.color,§7
+onehit.3.score.sub,Tim´s Ex-Girlfiriend ->
+onehit.3.score.sub.value,§7PornHub.com
+onehit.3.settings,§eSettings
+onehit.3.settings.alreadybought,§eAlready bought
+onehit.3.settings.booster.bought,§eYou bought the Booster for five minutes!
+onehit.3.settings.booster.lore,"Throws yourself forward for 5 min
+§7(150 Coins)"
+onehit.3.settings.booster.price,§7150 Coins
+onehit.3.settings.buy,§eBuy:
+onehit.3.settings.coins,Coins
+onehit.3.settings.messageset.0.name,Normal Messages
+onehit.3.settings.messageset.1.name,Special Messages 1
+onehit.3.settings.messageset.2.name,Special Messages 2
+onehit.3.settings.messageset.3.name,Special Team Messages
+onehit.3.settings.setchosen,§eSet Chosen
+onehit.3.streak,§c%player% §fhas your mother %d times FUCKED
+onehit.3.sword,§cAnal penetrator
+onehit.3.wonfight,§l§a✓ §r§4+5 Coins
+onehit.3.wonfight.sub,%rank_prefix%%player%
