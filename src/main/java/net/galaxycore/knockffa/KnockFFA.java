@@ -9,6 +9,8 @@ import net.galaxycore.galaxycorecore.scoreboards.ScoreBoardController;
 import net.galaxycore.knockffa.bindings.ScoreboardCallback;
 import net.galaxycore.knockffa.bindings.StatsBinding;
 import net.galaxycore.knockffa.debug.KnockFFADebug;
+import net.galaxycore.knockffa.ingame.StreakManager;
+import net.galaxycore.knockffa.listeners.BaseListeners;
 import net.galaxycore.knockffa.listeners.MessageSetLoader;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
@@ -127,6 +129,10 @@ public final class KnockFFA extends JavaPlugin {
         }
 
         // LISTENERS //
+        new BaseListeners();
+
+        // STREAKS //
+        new StreakManager();
 
         // STATS //
         StatsBinding.init();
