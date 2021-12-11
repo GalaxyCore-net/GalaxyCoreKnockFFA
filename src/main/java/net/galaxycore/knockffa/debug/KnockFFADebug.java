@@ -1,6 +1,7 @@
 package net.galaxycore.knockffa.debug;
 
 import net.galaxycore.knockffa.KnockFFA;
+import net.galaxycore.knockffa.bindings.StatsBinding;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -33,7 +34,7 @@ public class KnockFFADebug implements CommandExecutor, TabCompleter {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
                 player.damage(10000, player);
-                player.sendMessage(Component.text("Done"));
+                player.sendMessage(Component.text("Done that Master! Nya!"));
             } else {
                 sender.sendMessage("§cYou can only use this command as a player!");
             }
@@ -45,25 +46,22 @@ public class KnockFFADebug implements CommandExecutor, TabCompleter {
                 if (!debugPlayers.contains(player)) {
                     debugPlayers.add(player);
                 }
-                player.sendMessage(Component.text("Done"));
+                player.sendMessage(Component.text("Done that Master! Nya!"));
             } else {
                 sender.sendMessage("§cYou can only use this command as a player!");
             }
         }
 
-        if (args[0].equalsIgnoreCase("on")) {
-            if (sender instanceof Player) {
-                Player player = (Player) sender;
-                debugPlayers.remove(player);
-                player.sendMessage(Component.text("Done"));
-            } else {
-                sender.sendMessage("§cYou can only use this command as a player!");
-            }
+        if (args[0].equalsIgnoreCase("off")) {
+            Player player = (Player) sender;
+            debugPlayers.remove(player);
+            player.sendMessage(Component.text("Done that Master! Nya!"));
         }
 
         if (args[0].equalsIgnoreCase("statreset")) {
-            //TODO: reset Stats
-            sender.sendMessage("Not there yet");
+            Player player = (Player) sender;
+            new StatsBinding(player).reset();
+            sender.sendMessage("Done that Master! Nya!");
         }
 
         return true;
@@ -82,7 +80,7 @@ public class KnockFFADebug implements CommandExecutor, TabCompleter {
                 "suicide",
                 "on",
                 "off",
-                "resetstats » not there yet"
+                "statsreset"
         );
     }
 
