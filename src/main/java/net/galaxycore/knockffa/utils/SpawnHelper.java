@@ -1,6 +1,14 @@
 package net.galaxycore.knockffa.utils;
 
+import net.galaxycore.galaxycorecore.configuration.internationalisation.I18N;
 import net.galaxycore.knockffa.KnockFFA;
+import net.galaxycore.knockffa.bindings.CoinsBinding;
+import net.galaxycore.knockffa.bindings.StatsBinding;
+import net.galaxycore.knockffa.ingame.IngameEventListener;
+import net.galaxycore.knockffa.ingame.IngamePhase;
+import net.galaxycore.knockffa.ingame.StreakManager;
+import net.kyori.adventure.key.Key;
+import net.kyori.adventure.sound.Sound;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -54,9 +62,57 @@ public class SpawnHelper {
         return inSpawn;
     }
 
-    public static void reset(Player player) {
+    public static void reset(Player player, boolean dead) {
         player.teleport(SpawnHelper.getRandomSpawn());
-        //TODO Set Player Items
+
+        if (IngameEventListener.getLastDamage().containsKey(player)) {
+            Player killer = IngameEventListener.getLastDamage().get(player);
+
+            player.sendTitle(
+                    I18NUtils.getRF(player, "killed", killer),
+                    I18NUtils.getRF(player, "killed.sub", killer),
+                    20,
+                    40,
+                    20
+            );
+
+            killer.sendTitle(
+                    I18NUtils.getRF(killer, "wonfight", player),
+                    I18NUtils.getRF(killer, "wonfight.sub", player),
+                    20,
+                    40,
+                    20
+            );
+
+            player.playSound(Sound.sound(Key.key("minecraft", "entity.player.death"), Sound.Source.MASTER, 1f, 1f));
+            killer.playSound(Sound.sound(Key.key("minecraft", "block.note_block_pling"), Sound.Source.MASTER, 1f, 2f));
+
+            registerPlayerDead(killer, player);
+        } else {
+            if (dead)
+                registerPlayerDead(player);
+        }
+
+        //TODO Set Player Items (Lobby Phase)
+    }
+
+    private static void registerPlayerDead(Player damager, Player damaged) {
+        new StatsBinding(damager).addKill();
+        new StatsBinding(damaged).addDeath();
+
+        StreakManager.registerKill(damager);
+        StreakManager.registerDeath(damaged);
+
+        new CoinsBinding(damager).increase(Long.parseLong(KnockFFA.getInstance().getConfigNamespace().get("kill_coins_plus")));
+        new CoinsBinding(damaged).decrease(Long.parseLong(KnockFFA.getInstance().getConfigNamespace().get("death_coins_minus")), "PlayerDeath");
+    }
+
+    private static void registerPlayerDead(Player damaged) {
+        new StatsBinding(damaged).addDeath();
+
+        StreakManager.registerDeath(damaged);
+
+        new CoinsBinding(damaged).decrease(Long.parseLong(KnockFFA.getInstance().getConfigNamespace().get("death_coins_minus")), "PlayerDeath");
     }
 
 }

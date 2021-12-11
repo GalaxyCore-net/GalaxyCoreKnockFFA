@@ -9,6 +9,8 @@ import net.galaxycore.galaxycorecore.scoreboards.ScoreBoardController;
 import net.galaxycore.knockffa.bindings.ScoreboardCallback;
 import net.galaxycore.knockffa.bindings.StatsBinding;
 import net.galaxycore.knockffa.debug.KnockFFADebug;
+import net.galaxycore.knockffa.ingame.IngameEventListener;
+import net.galaxycore.knockffa.ingame.IngamePhase;
 import net.galaxycore.knockffa.ingame.StreakManager;
 import net.galaxycore.knockffa.listeners.BaseListeners;
 import net.galaxycore.knockffa.listeners.JoinListener;
@@ -37,6 +39,9 @@ public final class KnockFFA extends JavaPlugin {
 
     @Getter
     private KnockFFADebug knockFFADebug;
+
+    @Getter
+    private IngamePhase ingamePhase;
 
     @Override
     public void onEnable() {
@@ -77,9 +82,16 @@ public final class KnockFFA extends JavaPlugin {
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".settings.messageset.2.name", "Spezial-Nachrichten 2");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".settings.messageset.3.name", "Spezial-Team-Nachrichten");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".booster", "§cBooster");
-            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".sword", "§cSchwert");
-            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".bow", "§cBogen");
-            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".arrow", "§cPfeil");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".stick", "§6§lStick");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".stick.lore", "§5§lSchlage Leute");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".rod", "§2§lEnterhaken");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".rod.lore", "§6§lZiehe dich zum Gegner hin");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".pearl", "§5§lEnderperle");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".pearl.lore", "§6§lWerfe dich zum Gegner");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".blocks", "§5§lBlöcke");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".blocks.lore", "§6§lBaue um die Wette :D");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".web", "§5§lWeb");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".web.lore", "§6§lFreeze dich");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".killed", "§l§c✖ §r§4Gestorben");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".killed.sub", "%rank_prefix%%player% §8| §c-5 Coins");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".killedself", "%rank_prefix%%player% §9hat sich selber mit dem Bogen abgeschossen. Das ist belastend.");
@@ -111,9 +123,16 @@ public final class KnockFFA extends JavaPlugin {
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".settings.messageset.2.name", "Special Messages 2");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".settings.messageset.3.name", "Special Team Messages");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".booster", "§cBooster");
-            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".sword", "§cSword");
-            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".bow", "§cBow");
-            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".arrow", "§cArrow");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".stick", "§6§lStick");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".stick.lore", "§5§lPunch People");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".rod", "§2§lGrappling Hook");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".rod.lore", "§6§lGrab onto the Enemy");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".pearl", "§5§lEnderpearl");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".pearl.lore", "§6§lTeleport to the Enemy");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".blocks", "§5§lBlocks");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".blocks.lore", "§6§lBuild Battle :D");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".web", "§5§lWeb");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".web.lore", "§6§lFreeze");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".killed", "§l§c✖ §r§4You Died");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".killed.sub", "%rank_prefix%%player% §8| §c-1 Coin");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".killedself", "%rank_prefix%%player% §9tried to kill himself with a bow. That's hilarious!");
@@ -137,6 +156,10 @@ public final class KnockFFA extends JavaPlugin {
         new BaseListeners();
         new JoinListener();
         new MoveListener();
+
+        // INGAME PHASE //
+        ingamePhase = new IngamePhase();
+        new IngameEventListener();
 
         // STREAKS //
         new StreakManager();
