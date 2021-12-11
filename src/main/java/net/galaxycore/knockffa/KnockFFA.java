@@ -13,6 +13,7 @@ import net.galaxycore.knockffa.ingame.StreakManager;
 import net.galaxycore.knockffa.listeners.BaseListeners;
 import net.galaxycore.knockffa.listeners.JoinListener;
 import net.galaxycore.knockffa.listeners.MessageSetLoader;
+import net.galaxycore.knockffa.listeners.MoveListener;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;
@@ -135,6 +136,7 @@ public final class KnockFFA extends JavaPlugin {
         // LISTENERS //
         new BaseListeners();
         new JoinListener();
+        new MoveListener();
 
         // STREAKS //
         new StreakManager();
