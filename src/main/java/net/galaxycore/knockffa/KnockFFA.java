@@ -11,6 +11,7 @@ import net.galaxycore.knockffa.bindings.StatsBinding;
 import net.galaxycore.knockffa.debug.KnockFFADebug;
 import net.galaxycore.knockffa.ingame.StreakManager;
 import net.galaxycore.knockffa.listeners.BaseListeners;
+import net.galaxycore.knockffa.listeners.JoinListener;
 import net.galaxycore.knockffa.listeners.MessageSetLoader;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
@@ -47,6 +48,9 @@ public final class KnockFFA extends JavaPlugin {
         // CONFIG //
         configNamespace = core.getDatabaseConfiguration().getNamespace("knockffa");
         configNamespace.setDefault("spawn.count", "1");
+        configNamespace.setDefault("spawn.0", "KnockFFA-5 0 124 0 0");
+        configNamespace.setDefault("death_height", "40");
+        configNamespace.setDefault("spawn.shapes", "79 106 79 -80 500 -80");
         configNamespace.setDefault("price.booster", "150");
         configNamespace.setDefault("price.messageset.0", "1500");
         configNamespace.setDefault("price.messageset.1", "1500");
@@ -130,6 +134,7 @@ public final class KnockFFA extends JavaPlugin {
 
         // LISTENERS //
         new BaseListeners();
+        new JoinListener();
 
         // STREAKS //
         new StreakManager();

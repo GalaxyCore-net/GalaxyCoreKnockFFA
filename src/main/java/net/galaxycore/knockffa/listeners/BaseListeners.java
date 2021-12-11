@@ -2,8 +2,10 @@ package net.galaxycore.knockffa.listeners;
 
 import io.papermc.paper.event.player.PlayerFlowerPotManipulateEvent;
 import net.galaxycore.knockffa.KnockFFA;
+import net.galaxycore.knockffa.utils.SpawnHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -72,6 +74,27 @@ public class BaseListeners implements Listener {
 
     @EventHandler
     public void onDamageTaken(EntityDamageEvent event) {
+        if (!(event.getEntity() instanceof Player)) {
+            event.setCancelled(false);
+            return;
+        }
+        if (event.getEntity() instanceof Player &&
+                (event.getCause() != EntityDamageEvent.DamageCause.ENTITY_ATTACK)
+                && (event.getCause() != EntityDamageEvent.DamageCause.VOID))
+            event.setCancelled(true);
+        if (event.getEntity() instanceof Player && event.getCause() == EntityDamageEvent.DamageCause.VOID) {
+            SpawnHelper.reset((Player) event.getEntity());
+        }
+    }
+
+    @EventHandler
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
+        if (event.getDamager() instanceof Player) {
+            event.setDamage(0);
+            if (SpawnHelper.isLocationInASpawn(event.getEntity().getLocation()))
+                event.setCancelled(true);
+            return;
+        }
         event.setCancelled(true);
     }
 
