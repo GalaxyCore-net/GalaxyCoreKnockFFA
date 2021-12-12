@@ -1,12 +1,11 @@
 package net.galaxycore.knockffa.utils;
 
-import net.galaxycore.galaxycorecore.configuration.internationalisation.I18N;
 import net.galaxycore.knockffa.KnockFFA;
 import net.galaxycore.knockffa.bindings.CoinsBinding;
 import net.galaxycore.knockffa.bindings.StatsBinding;
 import net.galaxycore.knockffa.ingame.IngameEventListener;
-import net.galaxycore.knockffa.ingame.IngamePhase;
 import net.galaxycore.knockffa.ingame.StreakManager;
+import net.galaxycore.knockffa.listeners.BaseListeners;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.sound.Sound;
 import org.bukkit.Location;
@@ -88,9 +87,11 @@ public class SpawnHelper {
             killer.playSound(Sound.sound(Key.key("minecraft", "block.note_block_pling"), Sound.Source.MASTER, 1f, 2f));
 
             registerPlayerDead(killer, player);
+            IngameEventListener.getLastDamage().remove(player);
         } else {
-            if (dead)
+            if (dead) {
                 registerPlayerDead(player);
+            }
         }
 
         //TODO Set Player Items (Lobby Phase)

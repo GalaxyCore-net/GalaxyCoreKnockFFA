@@ -2,8 +2,10 @@ package net.galaxycore.knockffa.debug;
 
 import net.galaxycore.knockffa.KnockFFA;
 import net.galaxycore.knockffa.bindings.StatsBinding;
+import net.galaxycore.knockffa.utils.LocationHelper;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,6 +16,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class KnockFFADebug implements CommandExecutor, TabCompleter {
 
@@ -33,7 +36,10 @@ public class KnockFFADebug implements CommandExecutor, TabCompleter {
         if (args[0].equalsIgnoreCase("suicide")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
-                player.damage(10000, player);
+                int spawns = Integer.parseInt(KnockFFA.getInstance().getConfigNamespace().get("spawn.count"));
+                Location loc = LocationHelper.getLocation("spawn." + new Random().nextInt(spawns));
+                loc.setY(-loc.getY());
+                player.teleport(loc);
                 player.sendMessage(Component.text("Done that Master! Nya!"));
             } else {
                 sender.sendMessage("§cYou can only use this command as a player!");

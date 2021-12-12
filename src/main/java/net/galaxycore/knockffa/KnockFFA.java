@@ -86,6 +86,7 @@ public final class KnockFFA extends JavaPlugin {
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".stick.lore", "§5§lSchlage Leute");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".rod", "§2§lEnterhaken");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".rod.lore", "§6§lZiehe dich zum Gegner hin");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".rod.cooldown", "§c§lWarte…");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".pearl", "§5§lEnderperle");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".pearl.lore", "§6§lWerfe dich zum Gegner");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".blocks", "§5§lBlöcke");
@@ -127,6 +128,7 @@ public final class KnockFFA extends JavaPlugin {
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".stick.lore", "§5§lPunch People");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".rod", "§2§lGrappling Hook");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".rod.lore", "§6§lGrab onto the Enemy");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".rod.cooldown", "§c§lWait…");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".pearl", "§5§lEnderpearl");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".pearl.lore", "§6§lTeleport to the Enemy");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".blocks", "§5§lBlocks");
