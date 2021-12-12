@@ -3,10 +3,14 @@ package net.galaxycore.knockffa.listeners;
 import io.papermc.paper.event.player.PlayerFlowerPotManipulateEvent;
 import lombok.SneakyThrows;
 import net.galaxycore.galaxycorecore.configuration.PlayerLoader;
+import net.galaxycore.galaxycorecore.configuration.internationalisation.I18N;
 import net.galaxycore.knockffa.KnockFFA;
 import net.galaxycore.knockffa.ingame.IngamePhase;
+import net.galaxycore.knockffa.lobby.InvSortMenu;
 import net.galaxycore.knockffa.utils.I18NUtils;
 import net.galaxycore.knockffa.utils.SpawnHelper;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -23,6 +27,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.inventory.InventoryAction;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.*;
 import org.bukkit.inventory.ItemStack;
@@ -51,9 +56,20 @@ public class BaseListeners implements Listener {
             event.setCancelled(true);
     }
 
+    @SuppressWarnings("deprecation")
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        event.setCancelled(true);
+        boolean cancel;
+        cancel = !SpawnHelper.isLocationInASpawn(event.getWhoClicked().getLocation());
+        if (!(event.getView().getTitle().contains(I18NUtils.get((Player) event.getWhoClicked(), "invsort")) && event.getClickedInventory() == event.getView().getTopInventory()))
+            cancel = true;
+        else {
+            if (event.getAction() == InventoryAction.PLACE_ONE || event.getAction() == InventoryAction.PLACE_ALL || event.getAction() == InventoryAction.PLACE_SOME)
+                Bukkit.getScheduler().runTaskLater(KnockFFA.getInstance(), () -> InvSortMenu.updateInvSortEntry((Player) event.getWhoClicked(), event.getView().getTopInventory()), 1);
+        }
+        if (event.getView().getTitle().contains(I18NUtils.get((Player) event.getWhoClicked(), "settings")) && event.getClickedInventory() == event.getView().getTopInventory())
+            cancel = false;
+        event.setCancelled(cancel);
     }
 
     @EventHandler

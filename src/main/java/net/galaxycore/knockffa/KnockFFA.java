@@ -16,6 +16,8 @@ import net.galaxycore.knockffa.listeners.BaseListeners;
 import net.galaxycore.knockffa.listeners.JoinListener;
 import net.galaxycore.knockffa.listeners.MessageSetLoader;
 import net.galaxycore.knockffa.listeners.MoveListener;
+import net.galaxycore.knockffa.lobby.LobbyInteractListener;
+import net.galaxycore.knockffa.lobby.LobbyPhase;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;
@@ -42,6 +44,9 @@ public final class KnockFFA extends JavaPlugin {
 
     @Getter
     private IngamePhase ingamePhase;
+
+    @Getter
+    private LobbyPhase lobbyPhase;
 
     @Override
     public void onEnable() {
@@ -82,6 +87,7 @@ public final class KnockFFA extends JavaPlugin {
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".settings.messageset.2.name", "Spezial-Nachrichten 2");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".settings.messageset.3.name", "Spezial-Team-Nachrichten");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".booster", "§cBooster");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".invsort", "§cInventar Sortieren");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".stick", "§6§lStick");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".stick.lore", "§5§lSchlage Leute");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".rod", "§2§lEnterhaken");
@@ -124,6 +130,7 @@ public final class KnockFFA extends JavaPlugin {
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".settings.messageset.2.name", "Special Messages 2");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".settings.messageset.3.name", "Special Team Messages");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".booster", "§cBooster");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".invsort", "§cSort Inventory");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".stick", "§6§lStick");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".stick.lore", "§5§lPunch People");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".rod", "§2§lGrappling Hook");
@@ -158,6 +165,10 @@ public final class KnockFFA extends JavaPlugin {
         new BaseListeners();
         new JoinListener();
         new MoveListener();
+
+        // LOBBY PHASE //
+        lobbyPhase = new LobbyPhase();
+        new LobbyInteractListener();
 
         // INGAME PHASE //
         ingamePhase = new IngamePhase();

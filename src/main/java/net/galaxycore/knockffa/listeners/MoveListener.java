@@ -16,7 +16,7 @@ public class MoveListener implements Listener {
     @EventHandler
     public void onMove(PlayerMoveEvent event) {
         if (SpawnHelper.isPlayerInASpawn(event.getPlayer())) {
-            //TODO: Set Items
+            KnockFFA.getInstance().getLobbyPhase().setItems(event.getPlayer());
         } else {
             KnockFFA.getInstance().getIngamePhase().setItems(event.getPlayer());
         }

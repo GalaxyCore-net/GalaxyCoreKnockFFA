@@ -5,7 +5,6 @@ import net.galaxycore.knockffa.bindings.CoinsBinding;
 import net.galaxycore.knockffa.bindings.StatsBinding;
 import net.galaxycore.knockffa.ingame.IngameEventListener;
 import net.galaxycore.knockffa.ingame.StreakManager;
-import net.galaxycore.knockffa.listeners.BaseListeners;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.sound.Sound;
 import org.bukkit.Location;
@@ -94,7 +93,7 @@ public class SpawnHelper {
             }
         }
 
-        //TODO Set Player Items (Lobby Phase)
+        KnockFFA.getInstance().getLobbyPhase().setItems(player);
     }
 
     private static void registerPlayerDead(Player damager, Player damaged) {
