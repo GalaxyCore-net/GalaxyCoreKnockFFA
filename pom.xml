@@ -82,7 +82,14 @@
         <dependency>
             <groupId>net.galaxycore</groupId>
             <artifactId>galaxycorecore</artifactId>
+            <scope>provided</scope>
             <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>net.luckperms</groupId>
+            <artifactId>api</artifactId>
+            <version>5.3</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
