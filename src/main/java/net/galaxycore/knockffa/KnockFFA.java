@@ -66,6 +66,10 @@ public final class KnockFFA extends JavaPlugin {
         configNamespace.setDefault("price.messageset.0", "1500");
         configNamespace.setDefault("price.messageset.1", "1500");
         configNamespace.setDefault("price.messageset.2", "1500");
+        configNamespace.setDefault("price.material.0", "1500");
+        configNamespace.setDefault("price.material.1", "1500");
+        configNamespace.setDefault("price.stick.0", "1500");
+        configNamespace.setDefault("price.stick.1", "1500");
         configNamespace.setDefault("death_coins_minus", "1");
         configNamespace.setDefault("kill_coins_plus", "5");
 
