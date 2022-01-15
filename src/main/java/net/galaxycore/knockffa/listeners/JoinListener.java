@@ -31,7 +31,7 @@ public class JoinListener implements Listener {
         event.getPlayer().setLevel(0);
 
         // Check if Always day is set, if not, set it and set time to 6000
-        if(!event.getPlayer().getWorld().getGameRuleValue(GameRule.DO_DAYLIGHT_CYCLE)) {
+        if(event.getPlayer().getWorld().getGameRuleValue(GameRule.DO_DAYLIGHT_CYCLE) != null && !event.getPlayer().getWorld().getGameRuleValue(GameRule.DO_DAYLIGHT_CYCLE)) {
             event.getPlayer().getWorld().setGameRule(GameRule.DO_DAYLIGHT_CYCLE, true);
             event.getPlayer().getWorld().setTime(6000);
         }
