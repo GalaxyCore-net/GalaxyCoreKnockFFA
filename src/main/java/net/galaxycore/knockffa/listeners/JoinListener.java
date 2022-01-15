@@ -25,6 +25,7 @@ public class JoinListener implements Listener {
     @EventHandler
     @SneakyThrows
     public void onPlayerJoin(PlayerJoinEvent event) {
+        event.getPlayer().setAllowFlight(true);
         event.getPlayer().setGameMode(GameMode.SURVIVAL);
 
         event.getPlayer().setExp(0);

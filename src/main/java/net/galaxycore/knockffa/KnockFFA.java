@@ -1,5 +1,7 @@
 package net.galaxycore.knockffa;
 
+import com.comphenix.protocol.ProtocolLibrary;
+import com.comphenix.protocol.ProtocolManager;
 import lombok.Getter;
 import net.galaxycore.galaxycorecore.GalaxyCoreCore;
 import net.galaxycore.galaxycorecore.configuration.ConfigNamespace;
@@ -12,10 +14,7 @@ import net.galaxycore.knockffa.debug.KnockFFADebug;
 import net.galaxycore.knockffa.ingame.IngameEventListener;
 import net.galaxycore.knockffa.ingame.IngamePhase;
 import net.galaxycore.knockffa.ingame.StreakManager;
-import net.galaxycore.knockffa.listeners.BaseListeners;
-import net.galaxycore.knockffa.listeners.JoinListener;
-import net.galaxycore.knockffa.listeners.MessageSetLoader;
-import net.galaxycore.knockffa.listeners.MoveListener;
+import net.galaxycore.knockffa.listeners.*;
 import net.galaxycore.knockffa.lobby.LobbyInteractListener;
 import net.galaxycore.knockffa.lobby.LobbyPhase;
 import org.bukkit.Bukkit;
@@ -48,8 +47,12 @@ public final class KnockFFA extends JavaPlugin {
     @Getter
     private LobbyPhase lobbyPhase;
 
+    @Getter
+    private ProtocolManager protocolManager;
+
     @Override
     public void onEnable() {
+        protocolManager = ProtocolLibrary.getProtocolManager();
         instance = this;
 
         // CORE //
@@ -195,6 +198,9 @@ public final class KnockFFA extends JavaPlugin {
 
         // DEBUG //
         knockFFADebug = new KnockFFADebug();
+
+        // PROTOCOLLIB LISTENERS //
+        protocolManager.addPacketListener(new DoubleJumpListener());
 
     }
 
