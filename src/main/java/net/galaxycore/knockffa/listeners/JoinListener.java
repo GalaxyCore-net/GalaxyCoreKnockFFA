@@ -56,6 +56,9 @@ public class JoinListener implements Listener {
         }
         resultExists.close();
         exists.close();
+
+        event.getPlayer().getInventory().clear();
+        KnockFFA.getInstance().getLobbyPhase().setItems(event.getPlayer());
     }
 
 }

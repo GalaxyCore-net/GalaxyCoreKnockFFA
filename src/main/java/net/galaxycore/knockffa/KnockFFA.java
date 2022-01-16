@@ -123,6 +123,10 @@ public final class KnockFFA extends JavaPlugin {
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".score.sub.value", "galaxycore.net");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".nomoney", "§cDu hast nicht genügend Geld");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".streak", "§c%player% hat nun einen Streak von %d!");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".messages", "§e§lNachrichtensets");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".sticks", "§a§lStöcke");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".settings.stickchosen", "§eStick Ausgewählt");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".settings.blockchosen", "§eBlock Ausgewählt");
 
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".settings", "§eSettings");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".settings.buy", "§eBuy: ");
@@ -166,6 +170,10 @@ public final class KnockFFA extends JavaPlugin {
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".score.sub.value", "galaxycore.net");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".nomoney", "§cYou don't have enough money");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".streak", "§c%player% now has a streak of %d");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".messages", "§e§lMessage sets");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".sticks", "§a§lSticks");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".settings.stickchosen", "§eStick Chosen");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".settings.blockchosen", "§eBlock Chosen");
         }
 
         // LISTENERS //
