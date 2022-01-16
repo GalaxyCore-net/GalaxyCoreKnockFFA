@@ -1,6 +1,7 @@
 package net.galaxycore.knockffa.lobby;
 
 import net.galaxycore.knockffa.KnockFFA;
+import net.galaxycore.knockffa.lobby.settings.SettingsMenu;
 import net.galaxycore.knockffa.utils.SpawnHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

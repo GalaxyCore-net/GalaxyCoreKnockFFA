@@ -6,6 +6,7 @@ import net.galaxycore.knockffa.KnockFFA;
 import net.galaxycore.knockffa.utils.SpawnHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
+import org.bukkit.GameRule;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -24,10 +25,17 @@ public class JoinListener implements Listener {
     @EventHandler
     @SneakyThrows
     public void onPlayerJoin(PlayerJoinEvent event) {
+        event.getPlayer().setAllowFlight(true);
         event.getPlayer().setGameMode(GameMode.SURVIVAL);
 
         event.getPlayer().setExp(0);
         event.getPlayer().setLevel(0);
+
+        // Check if Always day is set, if not, set it and set time to 6000
+        if(event.getPlayer().getWorld().getGameRuleValue(GameRule.DO_DAYLIGHT_CYCLE) != null && !event.getPlayer().getWorld().getGameRuleValue(GameRule.DO_DAYLIGHT_CYCLE)) {
+            event.getPlayer().getWorld().setGameRule(GameRule.DO_DAYLIGHT_CYCLE, true);
+            event.getPlayer().getWorld().setTime(6000);
+        }
 
         Objects.requireNonNull(event.getPlayer().getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(2);
 
@@ -48,6 +56,9 @@ public class JoinListener implements Listener {
         }
         resultExists.close();
         exists.close();
+
+        event.getPlayer().getInventory().clear();
+        KnockFFA.getInstance().getLobbyPhase().setItems(event.getPlayer());
     }
 
 }
