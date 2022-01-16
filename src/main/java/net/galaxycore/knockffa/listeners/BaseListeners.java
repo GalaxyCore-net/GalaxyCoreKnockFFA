@@ -179,7 +179,7 @@ public class BaseListeners implements Listener {
                 Location hookLoc = event.getHook().getLocation();
                 Location change = hookLoc.subtract(playerLoc);
                 change.setY(change.getY() + 2);
-                event.getPlayer().setVelocity(change.toVector().multiply(.5));
+                event.getPlayer().setVelocity(change.toVector().multiply(.35));
                 setRodCooldown(event.getPlayer());
 
             }

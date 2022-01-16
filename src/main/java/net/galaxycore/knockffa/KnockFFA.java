@@ -1,5 +1,7 @@
 package net.galaxycore.knockffa;
 
+import com.comphenix.protocol.ProtocolLibrary;
+import com.comphenix.protocol.ProtocolManager;
 import lombok.Getter;
 import net.galaxycore.galaxycorecore.GalaxyCoreCore;
 import net.galaxycore.galaxycorecore.configuration.ConfigNamespace;
@@ -12,10 +14,7 @@ import net.galaxycore.knockffa.debug.KnockFFADebug;
 import net.galaxycore.knockffa.ingame.IngameEventListener;
 import net.galaxycore.knockffa.ingame.IngamePhase;
 import net.galaxycore.knockffa.ingame.StreakManager;
-import net.galaxycore.knockffa.listeners.BaseListeners;
-import net.galaxycore.knockffa.listeners.JoinListener;
-import net.galaxycore.knockffa.listeners.MessageSetLoader;
-import net.galaxycore.knockffa.listeners.MoveListener;
+import net.galaxycore.knockffa.listeners.*;
 import net.galaxycore.knockffa.lobby.LobbyInteractListener;
 import net.galaxycore.knockffa.lobby.LobbyPhase;
 import org.bukkit.Bukkit;
@@ -48,8 +47,12 @@ public final class KnockFFA extends JavaPlugin {
     @Getter
     private LobbyPhase lobbyPhase;
 
+    @Getter
+    private ProtocolManager protocolManager;
+
     @Override
     public void onEnable() {
+        protocolManager = ProtocolLibrary.getProtocolManager();
         instance = this;
 
         // CORE //
@@ -120,6 +123,10 @@ public final class KnockFFA extends JavaPlugin {
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".score.sub.value", "galaxycore.net");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".nomoney", "§cDu hast nicht genügend Geld");
             I18N.setDefaultByLang("de_DE", "knockffa." + i + ".streak", "§c%player% hat nun einen Streak von %d!");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".messages", "§e§lNachrichtensets");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".sticks", "§a§lStöcke");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".settings.stickchosen", "§eStick Ausgewählt");
+            I18N.setDefaultByLang("de_DE", "knockffa." + i + ".settings.blockchosen", "§eBlock Ausgewählt");
 
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".settings", "§eSettings");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".settings.buy", "§eBuy: ");
@@ -163,6 +170,10 @@ public final class KnockFFA extends JavaPlugin {
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".score.sub.value", "galaxycore.net");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".nomoney", "§cYou don't have enough money");
             I18N.setDefaultByLang("en_GB", "knockffa." + i + ".streak", "§c%player% now has a streak of %d");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".messages", "§e§lMessage sets");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".sticks", "§a§lSticks");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".settings.stickchosen", "§eStick Chosen");
+            I18N.setDefaultByLang("en_GB", "knockffa." + i + ".settings.blockchosen", "§eBlock Chosen");
         }
 
         // LISTENERS //
@@ -195,6 +206,9 @@ public final class KnockFFA extends JavaPlugin {
 
         // DEBUG //
         knockFFADebug = new KnockFFADebug();
+
+        // PROTOCOLLIB LISTENERS //
+        protocolManager.addPacketListener(new DoubleJumpListener());
 
     }
 

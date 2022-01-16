@@ -2,7 +2,7 @@ name: GalaxyCoreKnockFFA
 version: '${project.version}'
 main: net.galaxycore.knockffa.KnockFFA
 api-version: 1.16
-depend: [ GalaxyCoreCore, LuckPerms ]
+depend: [ GalaxyCoreCore, LuckPerms, ProtocolLib ]
 authors: [ Flo-Mit-H ]
 website: https://galaxycore.net
 
