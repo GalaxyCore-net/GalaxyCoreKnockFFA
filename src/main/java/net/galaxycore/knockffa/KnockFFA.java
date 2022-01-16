@@ -47,12 +47,8 @@ public final class KnockFFA extends JavaPlugin {
     @Getter
     private LobbyPhase lobbyPhase;
 
-    @Getter
-    private ProtocolManager protocolManager;
-
     @Override
     public void onEnable() {
-        protocolManager = ProtocolLibrary.getProtocolManager();
         instance = this;
 
         // CORE //
@@ -206,9 +202,6 @@ public final class KnockFFA extends JavaPlugin {
 
         // DEBUG //
         knockFFADebug = new KnockFFADebug();
-
-        // PROTOCOLLIB LISTENERS //
-        protocolManager.addPacketListener(new DoubleJumpListener());
 
     }
 
