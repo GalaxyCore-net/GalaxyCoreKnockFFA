@@ -18,6 +18,8 @@ import net.galaxycore.knockffa.listeners.*;
 import net.galaxycore.knockffa.lobby.LobbyInteractListener;
 import net.galaxycore.knockffa.lobby.LobbyPhase;
 import org.bukkit.Bukkit;
+import org.bukkit.GameRule;
+import org.bukkit.World;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.event.EventHandler;
@@ -202,6 +204,12 @@ public final class KnockFFA extends JavaPlugin {
 
         // DEBUG //
         knockFFADebug = new KnockFFADebug();
+
+        // ALWAYS DAY //
+        for (World world : Bukkit.getWorlds()) {
+            world.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
+            world.setTime(6000);
+        }
 
     }
 
