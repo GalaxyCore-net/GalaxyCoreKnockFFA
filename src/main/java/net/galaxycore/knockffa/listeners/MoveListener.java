@@ -19,9 +19,9 @@ public class MoveListener implements Listener {
 
     @EventHandler
     public void onMove(PlayerMoveEvent event) {
-        if (SpawnHelper.isPlayerInASpawn(event.getPlayer())) {
+        if (SpawnHelper.isLocationInASpawn(event.getPlayer().getLocation())) {
             KnockFFA.getInstance().getLobbyPhase().setItems(event.getPlayer());
-        } else {
+        } else if (!SpawnHelper.isLocationInASpawn(event.getPlayer().getLocation().subtract(0, 5, 0))) {
             KnockFFA.getInstance().getIngamePhase().setItems(event.getPlayer());
         }
         if (event.getPlayer().getLocation().getBlockY() < Double.parseDouble(KnockFFA.getInstance().getConfigNamespace().get("death_height"))) {
