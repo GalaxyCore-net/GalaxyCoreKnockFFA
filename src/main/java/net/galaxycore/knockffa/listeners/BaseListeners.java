@@ -111,7 +111,7 @@ public class BaseListeners implements Listener {
     @EventHandler
     @SneakyThrows
     public void onBlockPlace(BlockPlaceEvent event) {
-        if (SpawnHelper.isLocationInASpawn(event.getBlockPlaced().getLocation()) && event.getPlayer().getGameMode() != GameMode.CREATIVE) {
+        if (SpawnHelper.isLocationInASpawn(event.getPlayer().getLocation()) && event.getPlayer().getGameMode() != GameMode.CREATIVE) {
             event.setCancelled(true);
             return;
         }
